@@ -6,6 +6,6 @@ has the test functions
 
 #Dont forget to change where the code is FROM & IMPORTed code & SUITE
 
-from tests.examples.a_example import tests_devprocess
-suite = unittest.TestLoader().loadTestsFromModule(tests_devprocess)
+from tests.examples.b_input_process_output import tests_input_process_output
+suite = unittest.TestLoader().loadTestsFromModule(tests_input_process_output)
 unittest.TextTestRunner(verbosity=2).run(suite)
