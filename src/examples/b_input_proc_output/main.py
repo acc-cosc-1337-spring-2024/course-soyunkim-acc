@@ -42,3 +42,40 @@ print(result)
 #convert alphanumeric to float(decimal number)
 result = input_process_output.add_values(float(value), float(value))
 print(result)
+
+val1 = input("Enter value 1: ")
+val2 = input("Enter value 2: ")
+
+result = input_process_output.floating_point_division(int(val1), int(val2))
+print(result)
+
+val1 = input("Enter value 1: ")
+val2 = input("Enter value 2: ")
+
+result = input_process_output.integer_division(int(val1), int(val2))
+print(result)
+
+#can put int(eger) when defining the variable
+val1 = int(input("Enter value 1: "))
+val2 = int(input("Enter value 2: "))
+val3 = int(input("Enter value 3: "))
+
+result = input_process_output.operator_precedence_1(val1, val2, val3)
+print(result)
+
+result = input_process_output.operator_precedence_2(val1, val2, val3)
+print(result)
+
+#exponent
+val1 = int(input("Enter value 1: "))
+exponent = int(input("Enter exponent: "))
+
+result = input_process_output.power_function(val1, exponent)
+print(result)
+
+val1 = int(input("Enter value 1: "))
+val2 = int(input("Enter value 2: "))
+
+result = input_process_output.get_remainder(val1, val2)
+
+print(result)
