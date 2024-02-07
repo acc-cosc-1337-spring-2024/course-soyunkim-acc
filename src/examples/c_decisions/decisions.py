@@ -26,5 +26,29 @@ def is_odd(num):
     return remainder == 1 
 
 def is_vowel(letter):
-    result = letter = 'a' or letter == 'e' or letter == 'i' or letter == 'o' or letter == 'u'
+    result = letter == 'a' or letter == 'e' or letter == 'i' or letter == 'o' or letter == 'u'
+    return result
+
+def is_overtime(hours):
+    return hours > 40
+
+#testing multiple conditions(elif)
+
+def get_generation(year):
+
+    result = ""
+
+    if(year >= 1996 and year <= 2014):
+        result = "Centennial"
+    elif(year >= 1977 and year <= 1995):
+        result = "Millennial"
+    elif(year >= 1965 and year <= 1976):
+        result = "Generation X"
+    elif(year >= 1946 and year <= 1964):
+        result = "Baby Boomer"
+    elif(year >= 1925 and year <= 1945):
+        result = "Silent Generation"
+    else:
+        result = "Invalid Option"
+        
     return result
