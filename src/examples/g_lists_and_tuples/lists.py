@@ -37,3 +37,47 @@ def list_parameter_return(list1):
 def find_item_in_list(item, list1):
     result = item in list1
     return result
+
+
+def copy_list():
+    list1 = [1,2,3,4]
+    print(list1)
+
+    list2 = list1
+    list2[0] = -1                                           #modifying list 2 but also modifies list 1 
+
+    print(list1)
+    print(list2)
+#working with same list
+    
+def copy_lists_manually():
+    list1 = [1,2,3,4]
+    list2 = []
+    print(list1)
+
+    for num in list1:
+        list2.append(num)                                   #manually iterate & copy, create a new variable
+
+    list2[0] = -1
+    print(list1)
+    print(list2)
+#two different lists
+
+
+def two_dimensional_lists():
+    student = [['Joe', 'Kim'],['Sam', 'Sue'],['Kelly', 'Chris']]
+    print(student[0])
+    print(student[1])
+    print(student[2])
+
+    print('Select one name')
+
+    print(student[1][1])                                    #sue
+    print(student[2][0])                                    #kelly
+
+
+    print('use loop to display')
+    
+    for i in range(0, len(student)):
+        for j in range(0, len(student[i])):
+            print(student[i][j])

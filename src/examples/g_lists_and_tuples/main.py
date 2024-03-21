@@ -53,3 +53,7 @@ else:
 
 for num in nums:
     print(num)
+
+
+lists.copy_list()
+lists.two_dimensional_lists()
