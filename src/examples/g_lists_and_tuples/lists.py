@@ -33,3 +33,7 @@ def list_parameter(list1):
 def list_parameter_return(list1):
     list1[0] = 0
     return list1
+
+def find_item_in_list(item, list1):
+    result = item in list1
+    return result
