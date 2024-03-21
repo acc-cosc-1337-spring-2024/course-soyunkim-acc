@@ -57,3 +57,26 @@ for num in nums:
 
 lists.copy_list()
 lists.two_dimensional_lists()
+
+
+#Tuple
+
+my_read_only_list = (1,2,3,4) 
+
+print(my_read_only_list)
+
+print(my_read_only_list[2])
+
+#my_read_only_list[0] = 5 
+#impossible
+
+#cannot be modified, read only
+
+if 4 in my_read_only_list:
+    print('4 exists')
+
+index = my_read_only_list.index(2)                  #finding the index of the given num in tuple
+
+print(index)
+
+print(len(my_read_only_list))
