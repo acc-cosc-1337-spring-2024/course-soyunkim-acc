@@ -55,5 +55,30 @@ class Test_Config(unittest.TestCase):
         prog_langs = {'C++':[1979, 1980, 1981, 1982, 1983], 'Java':'1992', 'Python':'1996', 'C#':2001}
         cpp_value = prog_langs['C++']
         self.assertEqual(cpp_value, [1979, 1980, 1981, 1982, 1983])
-        
+
+    def test_clear_dictionary(self):
+        prog_langs = {'C++':'1979', 'Java':'1992', 'Python':'1996', 'C#':'2001'}
+        prog_langs.clear()
+
+        self.assertEqual(prog_langs, {})
+
+    def test_get_from_dictionary(self):
+        prog_langs = {'C++':'1979', 'Java':'1992', 'Python':'1996', 'C#':'2001'}
+        value = prog_langs.get('c++', 'Key not found')
+
+        self.assertEqual(value, 'Key not found')
+
+        value = prog_langs.get('C++', 'Key not found')
+        self.assertEqual(value, '1979')
+
+    def test_create_dictionary_w_comprehensions(self):
+        numbers = [1, 2, 3, 4]
+        squares = {}
+        for number in numbers:
+            squares[number] = number**2
+
+        self.assertEqual(squares[1], 1)  #not index, referring to key
+        self.assertEqual(squares[2], 4)
+        self.assertEqual(squares[3], 9)
+        self.assertEqual(squares[4], 16)    
 

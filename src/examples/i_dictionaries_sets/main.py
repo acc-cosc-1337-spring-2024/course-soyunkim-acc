@@ -15,3 +15,6 @@ value = input('Enter value: ')
 dictionaries.add_key_pairs_to_dictionary(key, value, prog_langs)
 
 dictionaries.run_menu(prog_langs)
+
+dictionaries.loop_dictionary_for()
+dictionaries.get_dictionary_keys()
