@@ -82,3 +82,54 @@ class Test_Config(unittest.TestCase):
         self.assertEqual(squares[3], 9)
         self.assertEqual(squares[4], 16)    
 
+    def test_set_union(self):
+        set1 = set([1,2,3,4])
+        set2 = set([3,4,5,6])
+        expected_set = set([1,2,3,4,5,6]) #set does not contain duplicate values
+
+        union_set = set1.union(set2)
+
+        self.assertEqual(union_set, expected_set)
+
+    def test_set_intersection(self):
+        set1 = set([1,2,3,4])
+        set2 = set([3,4,5,6])
+        intersection_set = set1.intersection(set2)
+        expected_set = ({3,4})
+
+        self.assertEqual(intersection_set, expected_set)
+
+    def test_set_difference(self):
+        set1 = set([1,2,3,4])
+        set2 = set([2,4,5,6])
+        difference_set = set1.difference(set2)
+        expected_set = set([1,2])
+
+        self.assertEqual(difference_set, expected_set)
+
+    def test_set_difference(self):
+        set1 = set([1,2,3,4])
+        set2 = set([2,4,5,6])
+        difference_set = set2.difference(set1)
+        expected_set = set([5,6])
+
+        self.assertEqual(difference_set, expected_set)
+
+    def test_symmetric_difference(self):
+        set1 = set([1,2,3,4])
+        set2 = set([2,4,5,6])
+        sym_dif_set = set1.symmetric_difference(set2)
+        expected_set = set([1,2,5,6])
+
+    def  test_set_subset(self):
+        set1 = set([1,2,3,4])
+        set2 = set([2,3])
+
+        self.assertEqual(set2.issubset(set1), True)
+
+    def test_set_superset(self):
+        set1 = set([1,2,3,4])
+        set2 = set([2,3])
+
+        self.assertEqual(set1.issuperset(set2), True)
+
