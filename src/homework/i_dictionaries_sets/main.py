@@ -1,38 +1,40 @@
-import dictionary
+import sets
 
 def display_menu():
     print('Menu\n'
-        '1 - Add or Update Item\n'
-        '2 - Delete Item\n'
-        '3 - Exit')
-    
-def run_menu(inventory):
+          '1 - Students who took prog1 and prog2\n'
+          '2 - Students who took prog1 or prog2\n'
+          '3 - Students who took prog1 not prog2\n'
+          '4 - Students who took prog2 not prog1\n'
+          '5 - Exit')
 
-    option = 0
+def run_menu(prog1, prog2):
 
-    while (option != 3):
+    option = 0 
+    while option != 5:
         display_menu()
-        option = int(input("Enter option number: "))
-        handle_menu_option(option, inventory)
+        option = int(input('Enter option number for function: '))
+        handle_menu_option(option, prog1, prog2)
 
-def handle_menu_option(option, inventory):
+def handle_menu_option(option, prog1, prog2):
     if option == 1:
-        widget_add = input("Enter widget to add: ")
-        quantity = int(input("Enter the quantity of the widget: "))
-        dictionary.add_inventory(widget_add, quantity, inventory)
-        print('Widget added')
+        print('Students who took prog1 & prog2: ', sets.get_students_who_took_prog1_and_prog2(prog1, prog2))
 
     elif option == 2:
-        widget_remove = input("Enter widget to delete: ")
-        result = dictionary.remove_inventory_widget(widget_remove, inventory)
-        print(result)
-
+        print('Students who took prog1 or prog2: ', sets.get_students_who_took_prog1_or_prog2(prog1, prog2))
+        
     elif option == 3:
-        print('Exiting')
+        print('Students who took prog1 not prog2: ' ,sets.get_students_who_took_prog1_not_prog2(prog1, prog2))
 
+    elif option == 4:
+        print('Students who took prog2 not prog1: ', sets.get_students_who_took_prog2_not_prog1(prog1, prog2))
+    
+    elif option == 5:
+        print('Exiting...')
     else:
         print('Invalid option')
 
+prog1 = (['Student1', 'Student2', 'Student3'])
+prog2 = (['Student3', 'Student4', 'Student5'])
 
-inventory = {}
-run_menu(inventory)
+run_menu(prog1, prog2)
